@@ -2,4 +2,5 @@
 This is my first commit
 This is my second git change
 
-:P
+lolerz
+Martin Dizon
