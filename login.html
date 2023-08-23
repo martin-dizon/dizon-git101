@@ -8,7 +8,18 @@
      <title>Login Page</title>
      <script>
             function onLoginBtnClick() {
-                   alert(document.getElementById("username").value);
+                   const errorMsg = "INCOMPLETE LOGIN DETAILS";
+                   var username = document.getElementById("username").value.trim();
+                   var isUsernameEmpty = true;
+	           if(username.length == 0) {
+                     var isUsernameEmpty = true;
+                     alert(errorMsg);
+                     errorMsg = "ERROR: Either the username or the password were not provided. Please try again.";
+                   } 
+                   else {
+                     isUsernameEmpty = false;
+                   }
+                   console.log("isUsernameEmpty=", isUsernameEmpty);
             }
             function onClearBtnClick() {
                    document.getElementById("username").value = "";
@@ -23,7 +34,7 @@
           <label for="password">Password:</label>
           <input type="text" id="txtPassword" name="password"><br>
 
-          <button type="submit" onClick="onLoginBtnClick()">Login</button>
+          <button type="button" onClick="onLoginBtnClick()">Login</button>
           <button type="button" onClick="onClearBtnClick()">Clear</button>
      </form>
 </body>
